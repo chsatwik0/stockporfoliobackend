@@ -1,4 +1,4 @@
-Stock Portfolio Backend
+# STOCK PORTFOLIO BACKEND
 This is the backend service for managing stocks in a portfolio, built using Spring Boot and JPA with MySQL as the database. It supports adding, retrieving, and deleting stocks, which are stored in a relational database.
 
 Technologies Used

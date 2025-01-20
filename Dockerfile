@@ -1,5 +1,5 @@
-# Use OpenJDK 23 for the build stage
-FROM openjdk:23-alpine AS build
+# Use OpenJDK 17 for the build stage
+FROM openjdk:17-alpine AS build
 
 # Install Maven 4.0.0
 RUN apk add --no-cache curl && \
@@ -12,8 +12,8 @@ COPY . .
 # Build the application using Maven
 RUN mvn clean package -DskipTests
 
-# Use OpenJDK 23 for the runtime stage
-FROM openjdk:23-alpine
+# Use OpenJDK 17 for the runtime stage
+FROM openjdk:17-alpine
 COPY --from=build /target/*.jar demo.jar
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "demo.jar"]
